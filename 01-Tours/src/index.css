@@ -315,7 +315,9 @@ main {
   cursor: pointer;
 }
 .info-btn {
+  display: inline;
   color: var(--primary-500);
+  font-family: "Kurale", serif;
   font-weight: 600;
 }
 
