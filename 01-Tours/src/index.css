@@ -80,7 +80,6 @@ h3,
 h4,
 h5 {
   margin: 0;
-  font-family: var(--headingFont);
   font-weight: 400;
   line-height: 1;
   text-transform: capitalize;
@@ -134,10 +133,12 @@ ul {
 
 .btn {
   cursor: pointer;
-  color: var(--white);
+  color: black;
   background: var(--primary-500);
   border: transparent;
-  border-radius: var(--borderRadius);
+
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
   padding: 0.375rem 0.75rem;
   box-shadow: var(--shadow-1);
@@ -319,8 +320,12 @@ main {
 }
 
 .delete-btn {
-  border: 1px solid var(--primary-500);
-  color: var(--primary-500);
+  border: 1px solid springgreen;
+  color: var(--black);
+  background: springgreen;
+  font-family: "Kurale", serif;
+  font-weight: 600;
+  font-size: medium;
 }
 .delete-btn:hover {
   background: var(--primary-500);
