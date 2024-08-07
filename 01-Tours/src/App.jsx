@@ -9,6 +9,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchTours = async () => {
+    setIsLoading(true);
     try {
       const response = await fetch(url);
       const tours = await response.json();
@@ -32,6 +33,23 @@ const App = () => {
     return (
       <main>
         <Loading />
+      </main>
+    );
+  }
+  if (tours.length == 0) {
+    return (
+      <main>
+        <div className="title">
+          <h1>no tours left</h1>
+          <button
+            type="button"
+            className="btn"
+            style={{ borderRadius: "0.50rem", marginTop: "2rem" }}
+            onClick={() => fetchTours()}
+          >
+            refresh
+          </button>
+        </div>
       </main>
     );
   }
