@@ -1,6 +1,4 @@
-## Live URL
-
-[Tours](https://tours-reactsimpleproject.netlify.app)
+## Live URL [Tours](https://tours-reactsimpleproject.netlify.app)
 
 ## Steps
 
