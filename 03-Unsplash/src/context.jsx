@@ -2,10 +2,11 @@ import React, { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 const AppProvider = ({ children }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
-
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const toggleDarkTheme = () => {
-    setIsDarkTheme(!isDarkTheme);
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+    document.body.classList.toggle("dark-theme", newDarkTheme);
   };
 
   return (

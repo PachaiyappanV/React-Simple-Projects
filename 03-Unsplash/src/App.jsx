@@ -5,7 +5,7 @@ import { useGlobalContext } from "./context";
 
 const App = () => {
   const context = useGlobalContext();
-  console.log(context);
+  console.log(document.querySelector("body"));
   return (
     <main>
       <ThemeToggle />
