@@ -1,9 +1,15 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const AppContext = createContext();
 const AppProvider = ({ children }) => {
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+
+  const toggleDarkTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+
   return (
-    <AppContext.Provider value={{ abc: "hello there" }}>
+    <AppContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
       {children}
     </AppContext.Provider>
   );
