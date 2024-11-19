@@ -12,7 +12,7 @@ const Accordion = () => {
       {/* Multi-Selection Toggle Button */}
       <div className="flex justify-end mb-4">
         <button
-          className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
+          className={`px-6 py-3 rounded-lg font-semibold text-[16px] transition-all duration-300 ${
             isMultiSelect
               ? "bg-teal-500 text-white hover:bg-teal-600"
               : "bg-gray-600 text-white hover:bg-gray-700"
@@ -46,7 +46,7 @@ const Accordion = () => {
               }
             }}
           >
-            <span className="text-lg font-semibold group-hover:text-black">
+            <span className="text-xl font-semibold group-hover:text-black">
               {item.title}
             </span>
             {selectedItem === item.id || selectedItems.includes(item.id) ? (
@@ -58,12 +58,12 @@ const Accordion = () => {
 
           {/* Accordion Content */}
           {isMultiSelect && selectedItems.includes(item.id) && (
-            <div className="px-6 py-4 bg-gray-900 text-gray-300 text-sm">
+            <div className="px-6 py-4 bg-gray-900 text-gray-300 text-lg">
               {item.content}
             </div>
           )}
           {!isMultiSelect && selectedItem === item.id && (
-            <div className="px-6 py-4 bg-gray-900 text-gray-300 text-sm">
+            <div className="px-6 py-4 bg-gray-900 text-gray-300 text-lg">
               {item.content}
             </div>
           )}
