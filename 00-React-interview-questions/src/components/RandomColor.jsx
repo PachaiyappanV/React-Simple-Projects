@@ -41,7 +41,7 @@ const RandomColor = () => {
         {/* Controls Section */}
         <div className="border-b-2 md:border-b-0 md:border-r-2 border-gray-700 flex items-center justify-center bg-gray-100">
           <div className="flex flex-col gap-10 p-6">
-            <div className="flex justify-center gap-6 text-lg">
+            <div className="flex flex-wrap justify-center gap-6 text-lg">
               <button
                 className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300"
                 onClick={handleHexColor}
