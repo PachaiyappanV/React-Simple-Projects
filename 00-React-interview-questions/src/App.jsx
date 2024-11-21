@@ -1,4 +1,5 @@
 import Accordion from "./components/Accordion";
+import ImageSlider from "./components/ImageSlider";
 import RandomColor from "./components/RandomColor";
 import StarRating from "./components/StarRating";
 
@@ -8,6 +9,7 @@ export default function App() {
       <Accordion />
       <RandomColor />
       <StarRating totalStars={10} />
+      <ImageSlider />
     </div>
   );
 }

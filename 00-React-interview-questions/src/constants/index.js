@@ -60,3 +60,5 @@ export const accordionData = [
       "You can customize Tailwind by editing the `tailwind.config.js` file, where you can add custom colors, spacing, and other design tokens.",
   },
 ];
+
+export const images = ["a.png", "b.jpg", "c.png", "d.png"];
