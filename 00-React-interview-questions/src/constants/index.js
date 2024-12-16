@@ -122,4 +122,8 @@ export const menuItems = [
   },
 ];
 
-export default menuItems;
+export const tabs = [
+  { id: 1, label: "Home", content: "Welcome to the home tab!" },
+  { id: 2, label: "Profile", content: "This is your profile section." },
+  { id: 3, label: "Settings", content: "Adjust your preferences here." },
+];
