@@ -4,6 +4,7 @@ import NavigationMenu from "./components/NavigationMenu";
 import Popup from "./components/PopUp";
 
 import { useState } from "react";
+import GithubProfileFinder from "./components/GithubProfileFinder";
 import RandomColor from "./components/RandomColor";
 import ScrollIndicator from "./components/ScrollIndicator";
 import StarRating from "./components/StarRating";
@@ -48,6 +49,7 @@ export default function App() {
           </button>
         </Popup>
       </div>
+      <GithubProfileFinder />
     </div>
   );
 }
