@@ -9,6 +9,9 @@ import RandomColor from "./components/RandomColor";
 import ScrollIndicator from "./components/ScrollIndicator";
 import StarRating from "./components/StarRating";
 import Tabs from "./components/Tabs";
+import UseFetchHook from "./components/UseFetchHook";
+import Dropdown from "./components/UseOnclickOutside";
+import UseWindowResizeHook from "./components/UseWindowResizeHook";
 
 export default function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -50,6 +53,16 @@ export default function App() {
         </Popup>
       </div>
       <GithubProfileFinder />
+      <UseFetchHook />
+      <div className="h-screen">
+        <h2 className="text-3xl font-semibold mb-4 text-center">
+          use-onclick-outside
+        </h2>
+        <div className="h-[80%] w-full flex items-center justify-center">
+          <Dropdown />
+        </div>
+      </div>
+      <UseWindowResizeHook />
     </div>
   );
 }
