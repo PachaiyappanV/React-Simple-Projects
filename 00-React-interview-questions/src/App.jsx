@@ -3,7 +3,7 @@ import ImageSlider from "./components/ImageSlider";
 import NavigationMenu from "./components/NavigationMenu";
 import Popup from "./components/PopUp";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import GithubProfileFinder from "./components/GithubProfileFinder";
 import RandomColor from "./components/RandomColor";
 import ScrollIndicator from "./components/ScrollIndicator";
@@ -15,17 +15,60 @@ import UseWindowResizeHook from "./components/UseWindowResizeHook";
 
 export default function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const randomColorRef = useRef(null);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Enables smooth scrolling
+    });
+  };
+
+  const scrollToBottom = () => {
+    console.log(
+      document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
+    );
+    window.scrollTo({
+      top: 100000,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToSection = (sectionRef) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-[100%] bg-gray-50">
+      <nav className="flex items-center justify-center space-x-2  bg-emerald-400 p-3">
+        <button
+          onClick={() => scrollToSection(randomColorRef)}
+          className="p-2 bg-fuchsia-700 rounded-lg text-white "
+        >
+          Random color
+        </button>
+      </nav>
+      <button
+        onClick={scrollToBottom}
+        className="p-2 absolute right-4 bg-yellow-400 rounded-lg top-20 "
+      >
+        Scroll to Bottom
+      </button>
+
       <ScrollIndicator />
       <Accordion />
-      <RandomColor />
+      <section ref={randomColorRef}>
+        <RandomColor />
+      </section>
+
       <StarRating totalStars={10} />
       <ImageSlider />
       <NavigationMenu />
       <Tabs />
       <Popup />
-      <div id="popup" className="p-4 fixed top-4">
+      <div id="popup" className="p-4 fixed top-20">
         {/* Open Popup Button */}
         <button
           onClick={() => setIsPopupOpen(true)}
@@ -63,6 +106,14 @@ export default function App() {
         </div>
       </div>
       <UseWindowResizeHook />
+      <div className="flex justify-end">
+        <button
+          onClick={scrollToTop}
+          className="p-2 mb-4 mr-4 bg-yellow-400 rounded-lg "
+        >
+          Scroll to Top
+        </button>
+      </div>
     </div>
   );
 }
