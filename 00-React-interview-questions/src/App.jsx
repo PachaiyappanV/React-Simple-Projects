@@ -12,6 +12,9 @@ import Tabs from "./components/Tabs";
 import UseFetchHook from "./components/UseFetchHook";
 import Dropdown from "./components/UseOnclickOutside";
 import UseWindowResizeHook from "./components/UseWindowResizeHook";
+import WeatherApp from "./components/WeatherApp";
+import DigitalClock from "./components/DigitalClock";
+import AdvancedCountdownTimer from "./components/Timer";
 
 export default function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -106,6 +109,7 @@ export default function App() {
         </div>
       </div>
       <UseWindowResizeHook />
+      <WeatherApp />
       <div className="flex justify-end">
         <button
           onClick={scrollToTop}
@@ -114,6 +118,8 @@ export default function App() {
           Scroll to Top
         </button>
       </div>
+      <DigitalClock />
+      <AdvancedCountdownTimer />
     </div>
   );
 }
